@@ -3,55 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projeto 04 - Formulários</title>
+    <title>Desafio 04</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
 </head>
 <body class="bg-light">
     <div class="container my-5">
         <div class="row justify-content-center">
-            <div class="col-md-8 col-lg-6">
-                <div class="card shadow-sm p-4">
-                    <h3 class="mb-4">Criar Conta</h3>
+            <div class="col-md-8 col-lg-7">
+                <div class="card shadow-sm p-4 border-0">
+                    <h3 class="mb-1 text-primary text-center">Ficha de Atendimento</h3>
+                    <p class="text-muted mb-4 small text-center">Preencha seus dados para agendar sua consulta com a Dra. Betsy Jo Dobson.</p>
+                    
                     <form>
                         <div class="row g-3">
                             <div class="col-sm-6">
-                                <label class="form-label">Nome</label>
-                                <input type="text" class="form-control" placeholder="João" required>
+                                <label for="nome" class="form-label">Nome</label>
+                                <input type="text" id="nome" class="form-control" placeholder="Ex: Catalina" required>
                             </div>
                             <div class="col-sm-6">
-                                <label class="form-label">Sobrenome</label>
-                                <input type="text" class="form-control" placeholder="Silva" required>
+                                <label for="sobrenome" class="form-label">Sobrenome</label>
+                                <input type="text" id="sobrenome" class="form-control" placeholder="Ex: Alvarez" required>
                             </div>
 
-                            <div class="col-12">
-                                <label class="form-label">Usuário</label>
+                            <div class="col-sm-7">
+                                <label for="whatsapp" class="form-label">Telefone</label>
                                 <div class="input-group">
-                                    <span class="input-group-text">@</span>
-                                    <input type="text" class="form-control" placeholder="joaosilva">
+                                    <span class="input-group-text">+55</span>
+                                    <input type="tel" id="whatsapp" class="form-control" placeholder="(41) 99999-9999" required>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-5">
+                                <label for="valor" class="form-label">Valor Estimado da Sessão</label>
+                                <div class="input-group">
+                                    <span class="input-group-text">R$</span>
+                                    <input type="number" id="valor" class="form-control" placeholder="150,00" step="0.01">
                                 </div>
                             </div>
 
                             <div class="col-12">
-                                <label class="form-label">Área de Interesse</label>
-                                <select class="form-select">
-                                    <option selected>Escolha um opção ...</option>
-                                    <option value="1">Front-end</option>
-                                    <option value="2">Back-end</option>
-                                    <option value="3">Full-stack</option>
+                                <label for="servico" class="form-label">Tipo de Atendimento</label>
+                                <select id="servico" class="form-select" required>
+                                    <option value="" selected disabled>Selecione o serviço desejado.. </option>
+                                    <option value="terapia_individual">Terapia Individual (Presencial)</option>
+                                    <option value="terapia_online">Terapia Individual (Online)</option>
+                                    <option value="terapia_casal">Terapia de Casal</option>
+                                    <option value="avaliacao">Avaliação Psicológica</option>
+                                    <option value="avaliacao">Neuropsicológica</option>
+                                    <option value="avaliacao">Acolhimento Inicial</option>
+                                    <option value="plantao">Plantão Psicológico</option>
                                 </select>
                             </div>
 
                             <div class="col-12">
+                                <label for="observacoes" class="form-label">Observações Iniciais para a Sessão</label>
+                                <textarea id="observacoes" class="form-control" rows="3" placeholder="Descreva brevemente o motivo da busca pelo atendimento, disponibilidade de horários ou observações relevantes."></textarea>
+                            </div>
+
+                            <div class="col-12 mt-3">
                                 <div class="form-check">
-                                    <input type="checkbox" id="termos" class="form-check-input">
-                                    <label for="termos" class="form-check-label">
-                                        Concordo com os termos de uso
+                                    <input type="checkbox" id="ciencia" class="form-check-input" required>
+                                    <label for="ciencia" class="form-check-label small text-secondary">
+                                        Declaro estar ciente das políticas de sigilo profissional e das regras de agendamento e cancelamento de sessões.
                                     </label>
                                 </div>
                             </div>
 
                             <div class="col-12 mt-4">
-                                <button class="btn btn-success w-100" type="submit">Finalizar Cadastro</button>
+                                <button class="btn btn-primary w-100 py-2" type="submit">Registrar Atendimento</button>
                             </div>
 
                         </div>
@@ -60,6 +79,5 @@
             </div>
         </div>
     </div>
-    
 </body>
 </html>
